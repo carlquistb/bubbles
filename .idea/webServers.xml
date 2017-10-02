@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="958fb99f-684a-483e-a5cd-0d12de6e965e" name="somcal" url="https://depts.washington.edu/somcal/">
+        <fileTransfer host="ovid.u.washington.edu" port="22" rootFolder="/nfs/bronfs/uwfs/rc00/d71/somcal/public_html" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
