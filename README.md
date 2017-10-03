@@ -18,3 +18,6 @@ because I don't know what I'm doing.
  2. eat
  3. go to sleep
  4. wake up again.
+ _______________________________________________________________________
+ **whoa, you can clone directly with PhpStorm! I've got to try this in a bit. Thats super cool.**
+ *The following was added directly from an Odegaard computer.*
