@@ -69,9 +69,14 @@ every file. This will lead to more consistency, etc. I'm sure you understand.
 #workflows
 
 #TODO:
+- create views, starting from most normalized function.
+  - example- create vUsersSimple first, concattenating the names of users together.
 - normalize inputted data.
   - capitalize all text, etc.
 - finish the add transmittal and populate transmittal forms on the admin page.
   - add transmittal should use javascript to add more form slots for deposits that need to be added to the transmittal.
   - the populate transmittal is a retroactive tool, similar to *add Unlock.*
 - add workflows to the README.md page...
+- add functionality to delete key types. 
+  - perhaps a stored procedure that checks if there are still any rentals for that key type.
+  - perhaps this is a feature of the OLTP datawarehouse associated with the project.
