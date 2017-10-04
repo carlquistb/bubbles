@@ -38,7 +38,7 @@ include("common.php");
 
             <div class="row">
                 <!-- overdue rentals column -->
-                <div class="col-sm-4">
+                <div class="col-sm-12">
                     <div class="well well-lg">
                         <h2>overdue rentals</h2>
                         <div id="overdueTableContainer">
@@ -50,6 +50,8 @@ include("common.php");
                         </div>
                     </div>
                 </div>
+                <? /*
+                TODO: blocked off because currently, the form factor messes up quite badly. I don't think we want a table here.
                 <!--temporary users column -->
                 <div class="col-sm-4">
                     <div class="well well-lg">
@@ -71,6 +73,7 @@ include("common.php");
                         </p>
                     </div>
                 </div>
+                   */?>
             </div>
 
         </div>
