@@ -10,9 +10,9 @@
     'use strict';
 
     window.onload = function() {
-        var div = $("#overdueTableContainer")[0];
+        /*var div = $("#overdueTableContainer")[0];
         //if this contains a warning, empty it and give a better warning.
-        if(div.innerHTML.indexOf("arning" != false)){
+        if(div.innerHTML.indexOf("arning" == true)){
             var span = document.createElement('span');
             span.setAttribute('class','glyphicon glyphicon-ok');
             var p = document.createElement('p');
@@ -20,7 +20,7 @@
             div.innerHTML="";
             div.append(span);
             div.append(p);
-        }
+        }*/
 
     };
 

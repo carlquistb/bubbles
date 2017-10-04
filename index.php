@@ -38,7 +38,6 @@ include("common.php");
 
             <div class="row">
                 <!-- overdue rentals column -->
-                <div class="col-sm-12">
                     <div class="well well-lg">
                         <h2>overdue rentals</h2>
                         <div id="overdueTableContainer">
@@ -49,7 +48,6 @@ include("common.php");
                             ?>
                         </div>
                     </div>
-                </div>
                 <? /*
                 TODO: blocked off because currently, the form factor messes up quite badly. I don't think we want a table here.
                 <!--temporary users column -->
@@ -74,6 +72,27 @@ include("common.php");
                     </div>
                 </div>
                    */?>
+            </div>
+            <div class="row well well-lg">
+                <h2>
+                    unprocessed deposits
+                </h2>
+                <?php selectToTable(    "select 
+                                                      Deposits.DepositID, 
+                                                      Deposits.DepositAmount,
+                                                      Rentals.RentalDate,
+                                                      concat(Users.UserFirstName, ' ' ,Users.UserLastName) as 'user name',
+                                                      concat(KeyTypes.KeyTypeName, ' (',  k.KeySerial, ')') as 'key'
+                                                    from Deposits 
+                                                    join Rentals on 
+                                                      Rentals.RentalDepositID=Deposits.DepositID
+                                                    join Users on
+                                                      Users.UserID = Rentals.RentalUserID
+                                                    join keys.Keys as k on 
+                                                      k.KeyID = Rentals.RentalKeyID
+                                                    join KeyTypes 
+                                                      on k.KeyTypeID = KeyTypes.KeyTypeID
+                                                    where DepositTransmittalID is null"); ?>
             </div>
 
         </div>
