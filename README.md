@@ -59,7 +59,7 @@ alert area labeled *unprocessed deposits.*
 - The deposit is handled in the other system, and the other system generates a transmittal with a transmittal number.
 - Using the admin tab, a transmittal is created using the transmittal number given by the other system (i.e. ST101). 
 On this form, the user will be able to add unprocessed deposits via drop down menus.
-- Thge transmittal ID of the transmittal being created will be associated with the Deposits that the user chooses. 
+- The transmittal ID of the transmittal being created will be associated with the Deposits that the user chooses. 
 The amounts will be enforced, and an error will pop up if they don't match. :(
 
 **Common.php**
@@ -67,6 +67,9 @@ It is important to note that common code will be stored in pages called common.*
 every file. This will lead to more consistency, etc. I'm sure you understand.
 
 #workflows
+
+#database diagram
+
 
 #TODO:
 - create views, starting from most normalized function.
