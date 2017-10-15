@@ -23,6 +23,7 @@ $RentalNote = $_GET['RentalNote'];
 //TODO: some fun stuff. Each rental will only have one key:
 //TODO: This will lead to redundancy, but I guess that's OK...
 $post_keys_array = array_keys($_GET);
+$new_rentalIDs_array = array();
 for($i = 0; $i < count($_GET); $i++) {
     $key = $post_keys_array[$i];
     $value = $_GET[$post_keys_array[$i]];
@@ -60,9 +61,7 @@ for($i = 0; $i < count($_GET); $i++) {
                                 $DepositID,
                                 '$RentalNote')
                             ";
-        echo $queryString;
-        executeInsert($queryString);
-        //TODO: make a query that changes the key's status to in use.
+        $new_rentalIDs_array[] = executeInsert($queryString);
         executeUpdate("UPDATE keys.Keys 
                         SET keys.Keys.KeyInUse = 1 
                         WHERE keys.Keys.KeyID = $KeyID");
@@ -76,29 +75,9 @@ for($i = 0; $i < count($_GET); $i++) {
 <body>
 <?php insertCommonHeader(); ?>
 <?php
-selectToTable("SELECT Rentals.RentalID,
-                      U.UserFirstName as 'User First Name',
-                      U.UserLastName as 'User Last Name',
-                      UE.UserFirstName as 'Employee First Name',
-                      UE.UserLastName as 'Employee Last Name',
-                      UA.UserFirstName as 'Approver First Name',
-                      UA.UserLastName as 'Approver Last Name',
-                      KeyTypes.KeyTypeName,
-                      keys.Keys.KeySerial,
-                      Rentals.RentalDate,
-                      Rentals.RentalExpectedReturnDate,
-                      Deposits.DepositAmount,
-                      Deposits.DepositType
-                FROM Rentals 
-                join Users as U on U.UserID = Rentals.RentalUserID
-                join keys.Keys on keys.Keys.KeyID = Rentals.RentalKeyID
-                join KeyTypes on KeyTypes.KeyTypeID = keys.Keys.KeyTypeID
-                join Employees on Employees.EmployeeID = Rentals.RentalEmployeeID
-                join Users as UE on Employees.EmployeeUserID = UE.UserID
-                join Users as UA on UA.UserID = Rentals.RentalApproverUserID
-                join Deposits on Rentals.RentalDepositID = Deposits.DepositID
-                ORDER BY Rentals.RentalDate ASC
-                ");
+    for($i = 0; $i++;$i < count($new_rentalIDs_array)) {
+        selectToTable("select * from vRentalSummary where RentalID=$new_rentalIDs_array[$i]");
+    }
 ?>
 </body>
 </html>
