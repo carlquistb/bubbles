@@ -4,7 +4,6 @@
     <list default="true" id="4c52b52b-0551-4c08-b8ca-48a0e5021b95" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/search.js" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/searchUser.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/search.php" afterPath="$PROJECT_DIR$/search.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
