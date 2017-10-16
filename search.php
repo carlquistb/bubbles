@@ -36,7 +36,7 @@ include("common.php");
                     <?php $AZ = range('A','Z'); ?>
                     <?php
                         foreach($AZ as $letter) {
-                            ?> <a href="searchUser.php?searhterm=firstname&letter=<?php echo $letter; ?>"><?php echo $letter; ?> </a>
+                            ?> <a href="searchUser.php?searchterm=firstname&letter=<?php echo $letter; ?>"><?php echo $letter; ?> </a>
                     <?php } ?>
                 </div>
                 <div class="well well-lg">
@@ -44,7 +44,7 @@ include("common.php");
                     <?php $AZ = range('A','Z'); ?>
                     <?php
                     foreach($AZ as $letter) {
-                        ?> <a href="searchUser.php?searhterm=lastname&letter=<?php echo $letter; ?>"><?php echo $letter; ?> </a>
+                        ?> <a href="searchUser.php?searchterm=lastname&letter=<?php echo $letter; ?>"><?php echo $letter; ?> </a>
                     <?php } ?>
                 </div>
                 <div class="well well-lg">
