@@ -57,7 +57,7 @@ include("common.php");
                         </select>
                         <?php insertLabelTag('keyID-select','key serial');?>
                         <select class="form-control" name="keyID" id="keyID-select">
-
+                            <!-- TODO: form javascript to fill this list after event listener. -->
                         </select>
                     </fieldset>
 

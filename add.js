@@ -17,6 +17,7 @@
 
     function fillApprovalSelectList() {
         var select = $("#RentalApprovalID-select")[0];
+        //in this context, 'this' is the <select> with #RentalUserID-select.
         var userID = this.value;
 
         var ajax = new XMLHttpRequest();
