@@ -13,7 +13,7 @@
     }
 
     function fillKeyIDSelectList() {
-        var select = $("#keyID-select");
+        var select = $("#keyID-select")[0];
         //'this' here is the <select> for KeyTypeID.
         // The value parameter is the value of the selected <option>.
         var KeyTypeID = this.value;
