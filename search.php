@@ -13,6 +13,7 @@ include("common.php");
 <html>
     <head>
         <?php insertCommonHead(); ?>
+        <script src="search.js"></script>
     </head>
     <body>
         <?php insertCommonHeader(); ?>
