@@ -10,9 +10,10 @@
     'use strict';
 
     window.onload = function() {
+        // TODO: reimplement this feature. However, it may not be necessary anymore.
         /*var div = $("#overdueTableContainer")[0];
         //if this contains a warning, empty it and give a better warning.
-        if(div.innerHTML.indexOf("arning" == true)){
+        if(div.innerHTML.indexOf("rning" == true)){
             var span = document.createElement('span');
             span.setAttribute('class','glyphicon glyphicon-ok');
             var p = document.createElement('p');
