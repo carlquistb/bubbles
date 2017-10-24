@@ -21,15 +21,15 @@ include("common.php");
                 $letter = $_GET['letter'];
                 selectToTable("select UserFirstName, UserLastName from Users where UserFirstName like '$letter%'");
             }
-            if($_GET['searchterm'] == 'lastname') {
+            else if($_GET['searchterm'] == 'lastname') {
                 $letter = $_GET['letter'];
                 selectToTable("select UserFirstName, UserLastName from Users where UserLastName like '$letter%'");
             }
-            if($_GET['searchterm'] == 'keyID') {
+            else if($_GET['searchterm'] == 'keyID') {
                 /* search all rentals ever to have that keyID, display in chronological order. */
                 //detailed view of current rental.
                 ?><h2>current rental</h2><?php
-                selectToTable("");
+                selectToTable("select * from Rentals where");
                 selectToTable("");
             } else {
                 ?><h2>error!</h2><?php

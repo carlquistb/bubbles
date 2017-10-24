@@ -79,7 +79,7 @@
             ajax.onload = function() {
                 keySerialSelect.innerHTML = this.responseText;
             };
-            ajax.open("GET", "options.php?table=Keys&KeyTypeID=" + KeyTypeID, true);
+            ajax.open("GET", "options.php?table=Keys&inUse=0&KeyTypeID=" + KeyTypeID, true);
             ajax.send(null);
         };
 

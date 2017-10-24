@@ -49,19 +49,20 @@ include("common.php");
                     <?php } ?>
                 </div>
                 <div class="well well-lg">
-                    <form class="form-horizontal" action="searchKey.php"></form>
-                    <legend>search by key serial</legend>
-                    <fieldset>
-                        <?php insertLabelTag('keyTypeID-select','key type');?>
-                        <select class="form-control" name="keyTypeID" id="keyTypeID-select">
-                            <?php fillKeyTypeSelectList(); ?>
-                        </select>
-                        <?php insertLabelTag('keyID-select','key serial');?>
-                        <select class="form-control" name="keyID" id="keyID-select">
-                            <!-- TODO: form javascript to fill this list after event listener. -->
-                        </select>
-                    </fieldset>
+                    <form class="form-horizontal" action="searchKey.php" method = "POST">
+                        <legend>search by key serial</legend>
+                        <fieldset>
+                            <?php insertLabelTag('keyTypeID-select','key type');?>
+                            <select class="form-control" name="keyTypeID" id="keyTypeID-select">
+                                <?php fillKeyTypeSelectList(); ?>
+                            </select>
+                            <?php insertLabelTag('keyID-select','key serial');?>
+                            <select class="form-control" name="keyID" id="keyID-select">
 
+                            </select>
+                            <?php insertSubmitButton('btn-submit-search-keySerial'); ?>
+                        </fieldset>
+                    </form>
                 </div>
             </div>
         </div>

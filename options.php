@@ -24,13 +24,24 @@ if($_GET['table'] == 'Keys') {
         echo("ERROR: the KeyTypeID parameter was not passed.");
         exit;
     }
+    if(!isset($_GET['inUse'])) {
+        echo("ERROR: the KeyTypeID parameter was not passed.");
+        exit;
+    }
     $KeyTypeID = $_GET['KeyTypeID'];
-    $results = executeSelect("Select KeySerial, KeyID
+    if($_GET["inUse"] == 0) {
+        $results = executeSelect("Select KeySerial, KeyID
                       from keys.Keys
                       where KeyTypeID = $KeyTypeID
                       AND keys.Keys.KeyInUse = 0",
-                  "there was an error filling the Keys select list. \n");
-
+            "there was an error filling the Keys select list. \n");
+    } else {
+        $results = executeSelect("Select KeySerial, KeyID
+                      from keys.Keys
+                      where KeyTypeID = $KeyTypeID
+                      AND keys.Keys.KeyInUse = 1",
+            "there was an error filling the Keys select list. \n");
+    }
     if($results->num_rows === 0) {
         echo "there were zero returned rows!";
         exit;
