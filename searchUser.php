@@ -27,6 +27,12 @@ include("common.php");
             }
             if($_GET['searchterm'] == 'keyID') {
                 /* search all rentals ever to have that keyID, display in chronological order. */
+                //detailed view of current rental.
+                ?><h2>current rental</h2><?php
+                selectToTable("");
+                selectToTable("");
+            } else {
+                ?><h2>error!</h2><?php
             }
         ?>
     </body>
