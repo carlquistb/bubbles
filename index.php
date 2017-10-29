@@ -42,36 +42,13 @@ include("common.php");
                         <h2>overdue rentals</h2>
                         <div id="overdueTableContainer">
                             <?php
-                                selectToTable("Select * from Rentals
+                                selectToTable("Select RentalID, RentalExpectedReturnDate, UserFirstName,UserLastName from Rentals
+                                              join Users on Users.UserID = Rentals.RentalUserID
                                               where Rentals.RentalExpectedReturnDate  
                                                 < date_add(current_date,interval 15 day)");
                             ?>
                         </div>
                     </div>
-                <? /*
-                TODO: blocked off because currently, the form factor messes up quite badly. I don't think we want a table here.
-                <!--temporary users column -->
-                <div class="col-sm-4">
-                    <div class="well well-lg">
-                        <h2>temporary users</h2>
-                        <?php selectToTable("select UserID, UserLastName, UserFirstName from Users where UserIsTemp = 'y'"); ?>
-                    </div>
-                </div>
-                <!-- transmittals and deposits column -->
-                <div class="col-sm-4">
-                    <div class="well well-lg">
-                        <h2>
-                            unprocessed transmittals and deposits
-                        </h2>
-                        <p class="well">
-                            ex) Transmittal ___ was for $___, but the total of the deposits associated is not equal!
-                        </p>
-                        <p class="well">
-                            ex) Deposit ___, by ___ has not been included in a cash transmittal yet.
-                        </p>
-                    </div>
-                </div>
-                   */?>
             </div>
             <div class="row well well-lg">
                 <h2>
