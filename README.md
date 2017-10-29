@@ -3,8 +3,7 @@
  self-led project exploring the case study of the University of Washington's 
  School of Music key rentals, deposits, and cash transmittals.
 
-
-#Scope of the project
+# Scope of the project
 
 **Users** 
 This project will track general user information, inputed manually. 
@@ -49,7 +48,7 @@ _last_ features implemented, and until it is available, editing will be done thr
 This portion of th site will only allow a strict few entry. Admins will be allowed to create new key types,
 key serial numbers, employees, doors, and transmittals. This is also where transmittals will be populated with deposits.
 
-#Implementation notes
+# Implementation notes
 **Deposits and transmittals**
 
 The flow of rentals, with regards to deposits and their transmittals.
@@ -66,12 +65,19 @@ The amounts will be enforced, and an error will pop up if they don't match. :(
 It is important to note that common code will be stored in pages called common.*, and those should be referenced in 
 every file. This will lead to more consistency, etc. I'm sure you understand.
 
-#workflows
+# workflows
 
-#database diagram
+# database diagram
 
+**Style Choices.**
+- Database objects
+  - database name : Bubbles.
+  - table names: all caps, underscores.
+  - column names: CamelCased. Column names begin with the name of the table they are in.
+  - views: all begin with lowercase v, otherwise or treated the same as tables.
+  - stored procedures: Name of sproc begin with 'usp,' then is CamelCased. Parameters are @ParamCamelCased.
 
-#TODO:
+# TODO:
 - create views, starting from most normalized function.
   - example- create vUsersSimple first, concattenating the names of users together.
 - normalize inputted data.
