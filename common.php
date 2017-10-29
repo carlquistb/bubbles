@@ -4,6 +4,14 @@
  * User: carlquistb
  */
 
+/***********
+ * ABSOLUTE GLOBAL VARIABLES
+ ***********/
+$GLOBALS['DB'] = 'keys';
+$GLOBALS['DB_PASSWORD'] = 'Calendars_5uck';
+$GLOBALS['DB_USERNAME'] = 'root';
+$GLOBALS['HOST'] = 'ovid.u.washington.edu';
+$GLOBALS['PORT'] = '53412';
 /**
  *inserts insides of the <head> tag that should be included, such as bootstrap and such.
  */
@@ -111,7 +119,7 @@ function fillUserSelectList() {
         $user = mysqli_fetch_array($results, MYSQLI_NUM);
     }
 }
-/*
+/**
  * inserts <option> tags with values of UserIDs of eligible people who can approve keys.
  */
 function fillApproverSelectList() {
@@ -297,7 +305,7 @@ function insertAlert($alert) {
 }
 
 function executeInsert($queryString, $errorMessage = "Sorry, this form is experiencing problems.") {
-    $connection = new MySQLi('ovid.u.washington.edu', 'root', 'Calendars_5uck','keys',53412);
+    $connection = new MySQLi($GLOBALS['HOST'], $GLOBALS['DB_USERNAME'], $GLOBALS['DB_PASSWORD'],$GLOBALS['DB'],$GLOBALS['PORT']);
     if(!$results = $connection->query($queryString)) {
         echo $errorMessage;
         echo "Error: our query failed to execute, and here is why: \n";
@@ -311,7 +319,7 @@ function executeInsert($queryString, $errorMessage = "Sorry, this form is experi
 }
 
 function executeSelect($queryString, $errorMessage = "Sorry, this form is experiencing problems.") {
-    $connection = new MySQLi('ovid.u.washington.edu', 'root', 'Calendars_5uck','keys',53412);
+    $connection = new MySQLi($GLOBALS['HOST'], $GLOBALS['DB_USERNAME'], $GLOBALS['DB_PASSWORD'],$GLOBALS['DB'],$GLOBALS['PORT']);
     if(!$results = $connection->query($queryString)) {
         echo $errorMessage;
         echo "Error: our query failed to execute, and here is why: \n";
@@ -326,7 +334,7 @@ function executeSelect($queryString, $errorMessage = "Sorry, this form is experi
 
 function executeUpdate($queryString, $errorMessage = "Sorry, this form is experiencing problems.") {
 
-    $connection = new MySQLi('ovid.u.washington.edu', 'root', 'Calendars_5uck','keys',53412);
+    $connection = new MySQLi($GLOBALS['HOST'], $GLOBALS['DB_USERNAME'], $GLOBALS['DB_PASSWORD'],$GLOBALS['DB'],$GLOBALS['PORT']);
     if(!$results = $connection->query($queryString)) {
         echo $errorMessage;
         echo "Error: our query failed to execute, and here is why: \n";
