@@ -73,7 +73,7 @@ every file. This will lead to more consistency, etc. I'm sure you understand.
 - Database objects
   - database name : Bubbles.
   - table names: all caps, underscores.
-  - column names: CamelCased. Column names begin with the name of the table they are in.
+  - column names: CamelCased. ID columns begin with the name of the table they are in.
   - views: all begin with lowercase v, otherwise or treated the same as tables.
   - stored procedures: Name of sproc begin with 'usp,' then is CamelCased. Parameters are @ParamCamelCased.
 
