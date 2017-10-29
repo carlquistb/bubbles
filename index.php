@@ -42,8 +42,9 @@ include("common.php");
                         <h2>overdue rentals</h2>
                         <div id="overdueTableContainer">
                             <?php
-                                selectToTable("Select RentalID, RentalExpectedReturnDate, UserFirstName,UserLastName from Rentals
+                                selectToTable("Select RentalID, KeySerial, RentalExpectedReturnDate, UserFirstName,UserLastName from Rentals
                                               join Users on Users.UserID = Rentals.RentalUserID
+                                              join 'Keys' on 'Keys'.KeyID = Rentals.RentalKeyID
                                               where Rentals.RentalExpectedReturnDate  
                                                 < date_add(current_date,interval 15 day)");
                             ?>
